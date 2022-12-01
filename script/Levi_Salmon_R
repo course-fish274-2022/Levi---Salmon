@@ -6,3 +6,10 @@ library(dplyr)
 library(ggplot2)
 
 Salmon <- read.csv("data/Catch_Escapement_Alaska_Fish274.csv")
+Escapement <- read.csv("data/Escapement_Fish274.csv")
+Totalreturn <- read.csv("data/Total_Return_Fish274.csv")
+
+
+
+
+
