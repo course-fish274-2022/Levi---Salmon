@@ -28,7 +28,10 @@ Ugashik, and Wood rivers.
 - Boats during the Fishing season (June 10 – July 25) race to catch fish
 - Boats have gotten bigger recently compared to previous fishing seasons
 ![Alttext](https://github.com/course-fish274-2022/Levi---Salmon/blob/main/documents/Screenshot_20221206-105038_Gallery.jpg?raw=true)
-```{r pressure}
-plot(pressure)
-```
+
+## Slide with Bullets
+- Salmon spawn in rivers, where total return is the combined total of escapement from fishery and the amount of fish harvested from fishery (total return = escapement + total catch)
+- Data was given in Bristol Bay, AK to look at escapement and total return reports from 1956 to 2020 for select fishing districts in Bristol Bay, AK.
+
+## Results
 
