@@ -51,3 +51,28 @@ geom_line(data=esc_long, aes(x = Year, y = value), linetype="dotted") +
 geom_line(data=ret_long, aes(x = year, y = value)) +
 facet_wrap(~name)
 ```
+
+```{r}
+ggplot() +
+  geom_point(data=esc_long, aes(Year, value, color= name)) +
+  geom_point(data=ret_long, aes(year, value, color= name))
+```
+```{r}
+ggplot() +
+  geom_point(data=esc_long, aes(Year, value), color = 'blue') +
+  geom_point(data=ret_long, aes(year, value)) +
+  facet_wrap(~name)
+```
+joining
+
+```{r}
+esc_ret <- left_join(esc_long, ret_long, by=c('Year'='year', 'name'='name'))
+```
+
+
+```{r}
+ggplot() +
+  geom_point(data=esc_ret, aes(value.x, value.y)) +
+  facet_wrap(~name)
+```
+
