@@ -27,6 +27,7 @@ Ugashik, and Wood rivers.
 ## Slide with Bullets
 - Boats during the Fishing season (June 10 – July 25) race to catch fish
 - Boats have gotten bigger recently compared to previous fishing seasons
+![Alttext](https://github.com/course-fish274-2022/Levi---Salmon/blob/main/documents/Screenshot_20221206-105038_Gallery.jpg?raw=true)
 ```{r pressure}
 plot(pressure)
 ```
