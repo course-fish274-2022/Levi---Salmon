@@ -1,0 +1,33 @@
+---
+title: "Bristol Bay Sockeye Salmon Runs"
+author: "Levi Rucka"
+date: '2022-12-06'
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets
+
+- Bristol Bay is a complex fishing region of southwest Alaska
+- Fishing districts of Alagnak, Egegik, Igushik,
+Kvichak, Naknek, Nushagak, Togiak,
+Ugashik, and Wood rivers.
+
+![Alttext](https://www.researchgate.net/profile/Ray-Hilborn-2/publication/10763829/figure/fig5/AS:667121893797890@1536065662190/Map-of-Bristol-Bay-Alaska-showing-the-major-lake-systems-producing-sockeye-salmon-and_W640.jpg)
+
+## Slide with Bullets
+- Boats during the Fishing season (June 10 – July 25) race to catch fish
+- Boats have gotten bigger recently compared to previous fishing seasons
+```{r pressure}
+plot(pressure)
+```
+
