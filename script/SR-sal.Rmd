@@ -1,0 +1,53 @@
+---
+title: "salmon_data"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+Salmon <- read.csv("../data/Catch_Escapement_Alaska_Fish274.csv")
+```
+
+
+```{r}
+esc <- read.csv("../data/Escapement_Fish274.csv")
+ret <- read.csv("../data/Total_Return_Fish274.csv")
+```
+
+```{r}
+esc_long <- esc %>%
+  pivot_longer(cols = c(2:10))
+```
+
+
+```{r}
+ret_long <- ret %>%
+  pivot_longer(cols = c(2:10))
+```
+
+```{r}
+ggplot(ret_long , aes(x = year, y = value, color = name)) +
+  geom_line()
+```
+
+```{r}
+ggplot(esc_long , aes(x = Year, y = value, color = name)) +
+  geom_line()
+```
+
+```{r}
+ggplot() + 
+geom_line(data=esc_long, aes(x = Year, y = value, color = name), linetype="dotted") + 
+geom_line(data=ret_long, aes(x = year, y = value, color = name))
+```
+
+```{r}
+ggplot() + 
+geom_line(data=esc_long, aes(x = Year, y = value), linetype="dotted") + 
+geom_line(data=ret_long, aes(x = year, y = value)) +
+facet_wrap(~name)
+```
