@@ -38,6 +38,74 @@ Ugashik, and Wood rivers.
 ![Alttext](https://jupyter.rttl.uw.edu/2022-autumn-fish-274-a/user/lrucka/rstudio/chunk_output/EBBE2D7394f1f222/2B1D9550/c8t3t5g5z612d/000014.png)
 Figure 1 shows the total return for sockeye salmon in each river system
 
+
+
+## Packages and loading data 
+
+```{r, echo=TRUE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+
+esc <- read.csv("../data/Escapement_Fish274.csv")
+ret <- read.csv("../data/Total_Return_Fish274.csv")
+```
+
+
+## Data 
+```{r}
+
+knitr::kable(head(esc))
+
+```
+
+
+## Pivoting data
+
+
+```{r, echo=TRUE}
+
+esc_long <- esc %>%
+  pivot_longer(cols = c(2:10))
+
+ret_long <- ret %>%
+  pivot_longer(cols = c(2:10))
+```
+
+
+
+## Results of pivoting 
+
+
+```{r}
+
+knitr::kable(head(esc_long))
+
+```
+
+
+
+## Joining data
+
+```{r, echo = TRUE}
+esc_ret <- left_join(esc_long, ret_long, by=c('Year'='year', 'name'='name'))
+```
+
+
+
+## Graphing 
+
+```{r, message=FALSE}
+ggplot() +
+  geom_point(data = esc_ret, aes(x = value.x, y = value.y)) +
+  facet_wrap(~name)
+```
+
+
+
+
+
 ## Results
 
 ![Alttext](https://jupyter.rttl.uw.edu/2022-autumn-fish-274-a/user/lrucka/rstudio/chunk_output/EBBE2D7394f1f222/2B1D9550/cuc3w4cnubunz/000012.png)
